@@ -36,7 +36,7 @@ def simpleksas(
     tolerancija: float = 1e-6,
     pradinis_zingsnis: float = 0.1,
 ) -> Tuple[Point, int, int]:
-    """Deformuojamo simplekso metodas be jokiu ziniu apie apribojimus ar baudas."""
+    """deformuojamo simplekso metodas is lab2 tik be jokiu apribojimu ar baudu"""
     x0 = list(start)
     n = len(x0)
     simplex: List[Point] = [x0.copy()]
