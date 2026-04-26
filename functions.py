@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import List, Tuple
 
-
+# 1 punktas: Aprašykite tikslo funkciją f(X), lygybinio ir nelygybinių apribojimų funkcijas gi(X) ir hi(X) taip, kad optimizavimo uždavinys būtų formuluojamas min f(X), gi(X)=0, hi(X)≤0.
 def tikslo_funkcija(X: Tuple[float, float, float]) -> float:
     """Minimizuojama funkcija: neigiamas dezes turis."""
     x1, x2, x3 = X
@@ -21,6 +21,7 @@ def h(X: Tuple[float, float, float]) -> List[float]:
     return [-x1, -x2, -x3]
 
 
+# 3 punktas: Aprašykite kvadratinę baudos funkciją, apimančią tikslo funkciją ir apribojimus.
 def baudos_funkcija(X: Tuple[float, float, float], r: float) -> float:
     """Kvadratine baudos funkcija B(X,r)=f(X)+1/r*b(X)."""
     if r <= 0:
