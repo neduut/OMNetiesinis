@@ -21,14 +21,18 @@ def h(X: Tuple[float, float, float]) -> List[float]:
     return [-x1, -x2, -x3]
 
 
+def apribojimu_bauda(X: Tuple[float, float, float]) -> float:
+    """Kvadratine apribojimu bauda b(X)."""
+    bauda = g(X) ** 2
+    for hi in h(X):
+        bauda += max(0.0, hi) ** 2
+    return bauda
+
+
 # 3 punktas: Aprašykite kvadratinę baudos funkciją, apimančią tikslo funkciją ir apribojimus.
 def baudos_funkcija(X: Tuple[float, float, float], r: float) -> float:
     """Kvadratine baudos funkcija B(X,r)=f(X)+1/r*b(X)."""
     if r <= 0:
         raise ValueError("r turi buti > 0")
 
-    bauda = g(X) ** 2
-    for hi in h(X):
-        bauda += max(0.0, hi) ** 2
-
-    return tikslo_funkcija(X) + bauda / r
+    return tikslo_funkcija(X) + apribojimu_bauda(X) / r
